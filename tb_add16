@@ -1,0 +1,18 @@
+`timescale 1ns / 1ps
+
+
+module tb_add16();
+         reg [15:0] A,B; wire [15:0] sum;
+         wire carry;
+         reg C;
+          initial 
+             begin
+               #50 A=16'hAA10 ; B=16'hA10A; C=16'h0000;
+               #50 A=16'hAA10; B=16'hA109;
+               #50 $stop;
+             end
+          add16 DUT(sum,carry,A,B,C);
+         
+         
+    
+endmodule
